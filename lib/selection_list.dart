@@ -5,15 +5,16 @@ import 'package:flutter/services.dart';
 import 'country_list_pick.dart';
 
 class SelectionList extends StatefulWidget {
-  SelectionList(this.elements, this.initialSelection,
-      {Key? key,
-      this.appBar,
-      this.theme,
-      this.countryBuilder,
-      this.useUiOverlay = true,
-      this.useSafeArea = false,
-      this.iconColor})
-      : super(key: key);
+  SelectionList(
+    this.elements,
+    this.initialSelection, {
+    Key? key,
+    this.appBar,
+    this.theme,
+    this.countryBuilder,
+    this.useUiOverlay = true,
+    this.useSafeArea = false,
+  }) : super(key: key);
 
   final PreferredSizeWidget? appBar;
   final List elements;
@@ -22,7 +23,6 @@ class SelectionList extends StatefulWidget {
   final Widget Function(BuildContext context, CountryCode)? countryBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
-  final Color? iconColor;
 
   @override
   _SelectionListState createState() => _SelectionListState();
@@ -141,8 +141,11 @@ class _SelectionListState extends State<SelectionList> {
                               title: Text(widget.initialSelection!.name!),
                               trailing: Padding(
                                 padding: const EdgeInsets.only(right: 20.0),
-                                child: Icon(Icons.check,
-                                    color: widget.iconColor ?? Colors.green),
+                                child: Icon(
+                                  Icons.check,
+                                  color:
+                                      widget.theme?.iconColor ?? Colors.green,
+                                ),
                               ),
                             ),
                           ),
