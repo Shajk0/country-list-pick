@@ -11,7 +11,8 @@ class SelectionList extends StatefulWidget {
       this.theme,
       this.countryBuilder,
       this.useUiOverlay = true,
-      this.useSafeArea = false})
+      this.useSafeArea = false,
+      this.iconColor})
       : super(key: key);
 
   final PreferredSizeWidget? appBar;
@@ -21,6 +22,7 @@ class SelectionList extends StatefulWidget {
   final Widget Function(BuildContext context, CountryCode)? countryBuilder;
   final bool useUiOverlay;
   final bool useSafeArea;
+  final Color? iconColor;
 
   @override
   _SelectionListState createState() => _SelectionListState();
@@ -139,7 +141,8 @@ class _SelectionListState extends State<SelectionList> {
                               title: Text(widget.initialSelection!.name!),
                               trailing: Padding(
                                 padding: const EdgeInsets.only(right: 20.0),
-                                child: Icon(Icons.check, color: Colors.green),
+                                child: Icon(Icons.check,
+                                    color: widget.iconColor ?? Colors.green),
                               ),
                             ),
                           ),
