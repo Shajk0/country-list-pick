@@ -127,7 +127,7 @@ class _SelectionListState extends State<SelectionList> {
                           ),
                         ),
                         Container(
-                          color: Colors.white,
+                          //color: Colors.white,
                           child: Material(
                             color: Colors.transparent,
                             child: ListTile(
