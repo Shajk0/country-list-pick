@@ -2,10 +2,10 @@
 import 'package:country_list_pick/country_list_pick.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   MyAppState createState() => MyAppState();
@@ -56,7 +56,7 @@ class MyAppState extends State<MyApp> {
             initialSelection: '+62',
             // or
             // initialSelection: 'US'
-            onChanged: (CountryCode code) {
+            onChanged: (code) {
               // print(code.name);
               // print(code.code);
               // print(code.dialCode);
